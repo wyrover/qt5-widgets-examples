@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/apk.png</file>
+        <file>icons/applications.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/disable.png</file>
+        <file>icons/enable.png</file>
+        <file>icons/files.png</file>
+        <file>icons/install.png</file>
+        <file>icons/logcat.png</file>
+        <file>icons/mounts.png</file>
+        <file>icons/permissions.png</file>
+        <file>icons/properties.png</file>
+        <file>icons/pull.png</file>
+        <file>icons/push.png</file>
+        <file>icons/read-only.png</file>
+        <file>icons/read-write.png</file>
+        <file>icons/record.png</file>
+        <file>icons/refresh.png</file>
+        <file>icons/rename.png</file>
+        <file>icons/stop.png</file>
+    </qresource>
+    <qresource prefix="/svg">
+        <file>material_icons/ic_apps_white_48px.svg</file>
+        <file>material_icons/ic_bug_report_white_48px.svg</file>
+        <file>material_icons/ic_build_white_48px.svg</file>
+        <file>material_icons/ic_create_white_48px.svg</file>
+        <file>material_icons/ic_format_align_left_white_48px.svg</file>
+        <file>material_icons/ic_help_white_48px.svg</file>
+    </qresource>
+</RCC>
