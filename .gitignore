@@ -41,3 +41,11 @@ target_wrapper.*
 
 # QtCreator CMake
 CMakeLists.txt.user*
+Win32
+GeneratedFiles
+release
+debug
+*.user
+*.vcxproj
+*.filters
+.vs
