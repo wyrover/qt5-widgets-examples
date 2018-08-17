@@ -49,3 +49,4 @@ debug
 *.vcxproj
 *.filters
 .vs
+/build
