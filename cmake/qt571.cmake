@@ -94,6 +94,16 @@ if(WIN32 AND MSVC)
         HINTS "${QT_LIB_DIR}/../plugins/imageformats"
     )
 
+
+    # qsvg
+    FIND_LIBRARY(Qt5QSVG_LIBRARIES_RELEASE qsvg
+        HINTS "${QT_LIB_DIR}/../plugins/imageformats"
+    )
+    FIND_LIBRARY(Qt5QSVG_LIBRARIES_DEBUG qsvgd
+        HINTS "${QT_LIB_DIR}/../plugins/imageformats"
+    )
+
+
     # qsvgicon
     FIND_LIBRARY(Qt5QSVGICON_LIBRARIES_RELEASE qsvgicon
         HINTS "${QT_LIB_DIR}/../plugins/iconengines"
@@ -134,6 +144,15 @@ if(WIN32 AND MSVC)
         HINTS "${QT_LIB_DIR}"
     )    
 
+    # qsqlite
+    FIND_LIBRARY(Qt5SQLITE_LIBRARIES_RELEASE qsqlite
+        HINTS "${QT_LIB_DIR}/../plugins/sqldrivers"
+    )
+    FIND_LIBRARY(Qt5SQLITE_LIBRARIES_DEBUG qsqlited
+        HINTS "${QT_LIB_DIR}/../plugins/sqldrivers"
+    )  
+
+   
 
 
     SET(Qt5SVG_LIBRARIES optimized ${Qt5SVG_LIBRARIES_RELEASE} debug ${Qt5SVG_LIBRARIES_DEBUG})
@@ -145,7 +164,8 @@ if(WIN32 AND MSVC)
     SET(Qt5PCRE_LIBRARIES optimized ${Qt5PCRE_LIBRARIES_RELEASE} debug ${Qt5PCRE_LIBRARIES_DEBUG})
     SET(Qt5PNG_LIBRARIES optimized ${Qt5PNG_LIBRARIES_RELEASE} debug ${Qt5PNG_LIBRARIES_DEBUG})
     SET(Qt5QSVGICON_LIBRARIES optimized ${Qt5QSVGICON_LIBRARIES_RELEASE} debug ${Qt5QSVGICON_LIBRARIES_DEBUG})
-
+    SET(Qt5QSVG_LIBRARIES optimized ${Qt5QSVG_LIBRARIES_RELEASE} debug ${Qt5QSVG_LIBRARIES_DEBUG})
+    SET(Qt5SQLITE_LIBRARIES optimized ${Qt5SQLITE_LIBRARIES_RELEASE} debug ${Qt5SQLITE_LIBRARIES_DEBUG})
 
     
     ADD_DEFINITIONS(-DSTATIC_QT5)

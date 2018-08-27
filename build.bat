@@ -15,4 +15,7 @@ SET INCLUDE=C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include;%INCLUDE
 SET LIB=C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib;%LIB%
 SET CL=/Zc:threadSafeInit- /D_USING_V110_SDK71_;%CL%
 
-cmake -G "Visual Studio 14 2015" ..
+cmake -G "Visual Studio 14 2015" -T v140_xp ..
+
+
+cd /d "%~dp0"
