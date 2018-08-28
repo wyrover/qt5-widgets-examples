@@ -7,9 +7,9 @@
 #include <QtPlugin>
 
 #if defined(Q_OS_WIN32)
-Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
+    Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
 #elif defined(Q_OS_MAC)
-Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
+    Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
 #endif
 
 int main(int argc, char *argv[])
@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 //    Widget w;
 //    w.show();
-
     QWidget* window = new QWidget;
     QPushButton *button1 = new QPushButton("One");
     QPushButton *button2 = new QPushButton("Two");
@@ -31,9 +30,7 @@ int main(int argc, char *argv[])
     layout->addWidget(button3);
     layout->addWidget(button4);
     layout->addWidget(button5);
-
     window->setLayout(layout);
     window->show();
-
     return a.exec();
 }

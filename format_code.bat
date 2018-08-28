@@ -1,7 +1,7 @@
 cd /d "%~dp0"
 set PATH=%~dp0;%PATH%
 set astyle=AStyle.exe --style=linux --s4 --p --H --U --f --v --w --c --xe --xL --xW
-set dir_path=".\"
+set dir_path=".\src"
 echo "format source code......"
 for /R %dir_path% %%a in (*.cpp;*.c;*.cc;*.h;*.hpp) do %astyle% "%%a" 1>nul 2>nul
 echo "delete backup source code......"

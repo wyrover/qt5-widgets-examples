@@ -7,16 +7,16 @@
 #include <QApplication>
 
 #ifdef WIN32
-#include <windows.h>
-#include <stdio.h>
+    #include <windows.h>
+    #include <stdio.h>
 #endif
 
 #include <QtPlugin>
 
 #if defined(Q_OS_WIN32)
-Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
+    Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
 #elif defined(Q_OS_MAC)
-Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
+    Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
 #endif
 
 
@@ -50,15 +50,10 @@ int main(int argc, char *argv[])
 #endif
     QString cmd = u8"中文测试";
     qDebug() << cmd.toUtf8().data();
-
     QApplication a(argc, argv);
-
     ConsoleAppender* consoleAppender = new ConsoleAppender();
     cuteLogger->registerAppender(consoleAppender);
-
-
     MainWindow w;
     w.show();
-
     return a.exec();
 }

@@ -3,9 +3,9 @@
 #include <QtPlugin>
 
 #if defined(Q_OS_WIN32)
-Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
+    Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
 #elif defined(Q_OS_MAC)
-Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
+    Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
 #endif
 
 
@@ -18,8 +18,8 @@ Q_IMPORT_PLUGIN(QSvgIconPlugin)
 
 int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
-	QTableWidget_test w;
-	w.show();
-	return a.exec();
+    QApplication a(argc, argv);
+    QTableWidget_test w;
+    w.show();
+    return a.exec();
 }

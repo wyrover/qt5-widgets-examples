@@ -4,7 +4,8 @@
 #include <QWidget>
 #include <QThread>
 
-class Worker : public QObject {
+class Worker : public QObject
+{
     Q_OBJECT
 public:
     Worker();
@@ -31,7 +32,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    
+
 
 private slots:
     void on_actionExit_triggered();
@@ -70,7 +71,7 @@ private:
     void createWidget26(int row);
     void createWidget27(int row);
 
-private:   
+private:
     Worker* worker_;
     QThread* thread_;
     QTableWidget* table_;

@@ -7,5 +7,4 @@ Widget::Widget(QWidget *parent)
 
 Widget::~Widget()
 {
-
 }

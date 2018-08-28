@@ -22,8 +22,6 @@ FontAwesomeIcons::FontAwesomeIcons()
     // add font file
     int fontId = QFontDatabase::addApplicationFont(":/font/fontawesome-webfont.ttf");
     QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
-
-    Q_ASSERT_X(fontFamilies.size()==1,"font","font not exist.");
-
+    Q_ASSERT_X(fontFamilies.size() == 1, "font", "font not exist.");
     this->font.setFamily(fontFamilies.at(0));
 }

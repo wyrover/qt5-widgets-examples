@@ -7,9 +7,9 @@
 #include <QtPlugin>
 
 #if defined(Q_OS_WIN32)
-Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
+    Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
 #elif defined(Q_OS_MAC)
-Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
+    Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
 #endif
 
 int main(int argc, char *argv[])
@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 //    Widget w;
 //    w.show();
-
     QWidget* window = new QWidget;
     QPushButton *button1 = new QPushButton("One");
     QPushButton *button2 = new QPushButton("Two");
@@ -25,7 +24,6 @@ int main(int argc, char *argv[])
     QPushButton *button4 = new QPushButton("Four");
     QPushButton *button5 = new QPushButton("Five");
     QHBoxLayout *layout = new QHBoxLayout;
-
     layout->addStretch();
     layout->addWidget(button1);
     layout->addWidget(button2);
@@ -33,9 +31,7 @@ int main(int argc, char *argv[])
     layout->addWidget(button4);
     layout->addWidget(button5);
     layout->addStretch();  // 添加伸缩   前后都加，所有控件居中显示
-
     window->setLayout(layout);
     window->show();
-
     return a.exec();
 }

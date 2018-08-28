@@ -11,15 +11,11 @@
 
 
 
-MainForm::MainForm(QWidget *parent) :
-    QWidget(parent)
-    
+    MainForm::MainForm(QWidget *parent) :
+        QWidget(parent)
+
 {
-   
-
-
     layout_ = new QVBoxLayout;
-
     auto toolbar = new QToolBar(this);
     toolbar->addAction(QIcon(":/icons/refresh.png"), tr("Refresh"));
     toolbar->addSeparator();
@@ -31,34 +27,21 @@ MainForm::MainForm(QWidget *parent) :
     toolbar->addSeparator();
     toolbar->addAction(QIcon(":/icons/apk.png"), tr("Extract APK"))->setEnabled(false);
     //toolBarMain->setStyleSheet("background-color:rgb(200,40,43);color:rgb(204,204,204)");
-
-
-    
-
-
-
     auto list_widget_ = new QListWidget;
-
-
     layout_->addWidget(toolbar);
     create_svg_toolbar();
     layout_->addWidget(list_widget_);
     layout_->setContentsMargins(0, 0, 0, 0);
-
     setLayout(layout_);
-
     resize(800, 600);
-    
 }
 
 MainForm::~MainForm()
 {
-    
 }
 
 void MainForm::onToolbarClicked(bool checked)
 {
-
 }
 
 void MainForm::create_svg_toolbar()

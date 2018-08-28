@@ -16,10 +16,10 @@ public:
     explicit TagLabel(QWidget *parent = 0);
     ~TagLabel();
 
-	void setText(const QString& text);
+    void setText(const QString& text);
 
 signals:
-	void removalRequested(const QString &text);
+    void removalRequested(const QString &text);
 
 private:
     void setupUI();
@@ -27,8 +27,8 @@ private:
 
 private:
     QString text_;
-	QString bkcolor_;
-	QString icon_filename_;
+    QString bkcolor_;
+    QString icon_filename_;
     QLabel* label_;
     QPushButton* close_button_;
 };
