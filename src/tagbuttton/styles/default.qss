@@ -1,0 +1,64 @@
+QTextBrowser {
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 50px;
+  background-color: #ededed;
+}
+QWidget#sidebar {
+  background-color: #3f51b5;
+}
+QToolButton {
+  margin: 5px;
+  color: #ededed;
+  background-color: #303f9f;
+  border: none;
+  font-size: 14px;
+}
+QToolButton:hover {
+  border: 2px solid #2c92ea;
+  border-radius: 5px;
+}
+QToolButton:checked {
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+
+
+QLabel[is_arg="true"] {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+QLabel[title="true"] {
+  background-color: rgb(141, 141, 141);	
+  font: 16pt; 
+}
+
+QPushButton[StatusBtn="true"] {
+    color: #ffffff;
+    background-color: #5cb85c;
+}
+
+/*
+QLabel[taglabel="label"] {
+    background-color: #5cb85c;
+}
+*/
+
+/*TagLabel { background-color: #5cb85c; color: #ffffff; border-radius:5px; }*/
+
+TagLabel QLabel {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+TagLabel QPushButton {     
+    font-size: 8px;
+    background-color:#5cb85c;  
+    border-style: solid;  
+    border-radius:5px;      
+}  
+
