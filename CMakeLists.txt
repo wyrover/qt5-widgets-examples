@@ -9,6 +9,7 @@ project(all)
 
 
 include(cmake/qt571.cmake)
+include(cmake/generate_demo.cmake)
 
 if (POLICY CMP0071)
     cmake_policy(SET CMP0071 NEW)
@@ -34,11 +35,12 @@ link_directories(${PROJECT_SOURCE_DIR}/3rdparty/botan-2/lib)
 
 add_subdirectory(3rdparty/CuteLogger)
 add_subdirectory(src/cmake01)
-add_subdirectory(src/toolbar01)
-add_subdirectory(src/layout01)
+#add_subdirectory(src/toolbar01)
+#add_subdirectory(src/layout01)
 add_subdirectory(src/qss-test)
-add_subdirectory(src/QTableWidget01)
-add_subdirectory(src/QTableWidget02)
+
+
+
 
 
 message(STATUS "CMakefiles.txt path: ${PROJECT_SOURCE_DIR}")
@@ -46,3 +48,36 @@ message(STATUS "build path: ${PROJECT_BINARY_DIR}")
 message(STATUS "lib oupt path: ${LIBRARY_OUTPUT_PATH}")
 message(STATUS "exe oupt path: ${EXECUTABLE_OUTPUT_PATH}")
 message(STATUS "QT_LIB_DIR: ${QT_LIB_DIR}")
+
+
+
+
+
+generate_demo("toolbar01")
+generate_demo("HBoxLayout-01")
+generate_demo("HBoxLayout-02")
+generate_demo("HBoxLayout-03")
+generate_demo("HBoxLayout-04")
+generate_demo("HBoxLayout-05")
+generate_demo("HBoxLayout-06")
+generate_demo("HBoxLayout-07")
+generate_demo("HBoxLayout-08")
+
+generate_demo("FormLayout-01")
+generate_demo("FormLayout-02")
+
+generate_demo("GridLayout-01")
+generate_demo("GridLayout-02")
+
+generate_demo("Splitter-01")
+generate_demo("Splitter-02")
+
+generate_demo("StackedLayout-01")
+
+
+
+generate_demo("QTableWidget01")
+generate_demo("QTableWidget02")
+
+generate_demo("FontAwesome")
+generate_demo("tagbuttton")
