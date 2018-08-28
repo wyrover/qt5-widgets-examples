@@ -9,6 +9,13 @@ Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
 Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
 #endif
 
+Q_IMPORT_PLUGIN(QICOPlugin)
+//Q_IMPORT_PLUGIN(QJpegPlugin)
+//Q_IMPORT_PLUGIN(QGifPlugin)
+//Q_IMPORT_PLUGIN(QTgaPlugin)
+Q_IMPORT_PLUGIN(QSvgPlugin)
+Q_IMPORT_PLUGIN(QSvgIconPlugin)
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
