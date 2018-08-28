@@ -81,3 +81,8 @@ generate_demo("QTableWidget02")
 
 generate_demo("FontAwesome")
 generate_demo("tagbuttton")
+
+generate_demo("HTYImageViewer")
+
+generate_demo("KuWo")
+

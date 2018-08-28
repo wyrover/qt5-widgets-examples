@@ -36,14 +36,14 @@ function(generate_demo arg)
     
 
     # Find the QtWidgets library
-    find_package(Qt5 COMPONENTS Core Gui Widgets REQUIRED)
+    find_package(Qt5 COMPONENTS Core Gui Widgets Svg Multimedia Network Concurrent Sql PrintSupport Xml REQUIRED)
 
 
 
     # Generate rules for building source files from the resources
     file(GLOB_RECURSE QRCS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/${ARGV0}/*.qrc)
     
-    qt5_add_resources(QRCS ${QRCS_FILES})
+    #qt5_add_resources(QRCS ${QRCS_FILES})
 
 
     # Generate code from ui files
@@ -56,7 +56,7 @@ function(generate_demo arg)
     #set(SOURCE_FILES main.cpp widget.cpp)
 
     # Tell CMake to create the HBoxLayout-02 executable
-    add_executable(${ARGV0} ${SOURCE_FILES} ${UI_HEADERS} ${QRCS})
+    add_executable(${ARGV0} ${SOURCE_FILES} ${UI_HEADERS} ${QRCS_FILES})
 
 
     target_include_directories(${ARGV0} BEFORE PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/${ARGV0})
@@ -65,6 +65,12 @@ function(generate_demo arg)
         Qt5::Core 
         Qt5::Gui 
         Qt5::Widgets 
+        Qt5::Multimedia
+        Qt5::Network
+        Qt5::Concurrent
+        Qt5::Svg
+        Qt5::Xml
+        Qt5::Sql        
         ${Qt5Platform_LIBRARIES} 
         ${Qt5QWindows_LIBRARIES} 
         ${Qt5PNG_LIBRARIES} 
@@ -72,12 +78,12 @@ function(generate_demo arg)
         ${Qt5HB_LIBRARIES} 
         ${Qt5FT_LIBRARIES} 
         ${Qt5PCRE_LIBRARIES} 
-        ${Qt5QSVGICON_LIBRARIES} 
-        ${Qt5SVG_LIBRARIES} 
+        ${Qt5QSVGICON_LIBRARIES}         
         ${Qt5QSVG_LIBRARIES}
         ws2_32 
         Imm32 
         Winmm
+        Iphlpapi
         CuteLogger
     )
 
