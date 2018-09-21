@@ -32,13 +32,13 @@ private:
     QTextBrowser *textBrowser;
     ControlBar *controlBar;
     QMediaPlayer *player;
-    LyricWidget *lyricWidget;    
+    LyricWidget *lyricWidget;
     int volume;
     void createToplistWidget();
     QByteArray getReply(QString surl);
-    QByteArray postReply(QString surl,QString spost);
+    QByteArray postReply(QString surl, QString spost);
     void getLyric(QString id);
-    struct Lyric{
+    struct Lyric {
         QTime time;
         QString sentence;
     };
@@ -52,16 +52,16 @@ private:
 private slots:
     void showNormalMaximize();
     void moveMe(QPoint point);
-    void createPlaylist(QString,QString);
-    void playSong(int,int);
+    void createPlaylist(QString, QString);
+    void playSong(int, int);
     void durationChange(qint64 d);
     void positionChange(qint64 p);
     void stateChange(QMediaPlayer::State state);
     void volumeChange(int v);
-    void playPause();    
+    void playPause();
     void sliderProgressMoved(int p);
     void sliderVolumeMoved(int v);
-    void mute();    
+    void mute();
     void navPage(int row);
     void preSearch();
     void search();

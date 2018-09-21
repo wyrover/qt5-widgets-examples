@@ -5,7 +5,8 @@
 #include <QDragEnterEvent>
 #include <QFileInfoList>
 
-namespace Ui {
+namespace Ui
+{
 class MainWindow;
 }
 

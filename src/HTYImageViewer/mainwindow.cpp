@@ -14,23 +14,22 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    move((QApplication::desktop()->width() - width())/2, (QApplication::desktop()->height() - height())/2);
+    move((QApplication::desktop()->width() - width()) / 2, (QApplication::desktop()->height() - height()) / 2);
     path = "";
     index = -1;
-    zoomType = ZoomFit;    
+    zoomType = ZoomFit;
     dirTrash = QDir::homePath() + "/.local/share/Trash/files";
     dirTrashInfo = QDir::homePath() + "/.local/share/Trash/info/";
-
     connect(ui->action_quit, SIGNAL(triggered()), qApp, SLOT(quit()));
-    connect(new QShortcut(QKeySequence(Qt::Key_Return),this), SIGNAL(activated()),this, SLOT(EEFullscreen()));
-    connect(new QShortcut(QKeySequence(Qt::Key_Enter),this), SIGNAL(activated()),this, SLOT(EEFullscreen()));
-    connect(new QShortcut(QKeySequence(Qt::Key_Escape),this), SIGNAL(activated()),this, SLOT(exitFullscreen()));
-    connect(new QShortcut(QKeySequence(Qt::Key_Left),this), SIGNAL(activated()),this, SLOT(lastImage()));
-    connect(new QShortcut(QKeySequence(Qt::Key_Right),this), SIGNAL(activated()),this, SLOT(nextImage()));
-
+    connect(new QShortcut(QKeySequence(Qt::Key_Return), this), SIGNAL(activated()), this, SLOT(EEFullscreen()));
+    connect(new QShortcut(QKeySequence(Qt::Key_Enter), this), SIGNAL(activated()), this, SLOT(EEFullscreen()));
+    connect(new QShortcut(QKeySequence(Qt::Key_Escape), this), SIGNAL(activated()), this, SLOT(exitFullscreen()));
+    connect(new QShortcut(QKeySequence(Qt::Key_Left), this), SIGNAL(activated()), this, SLOT(lastImage()));
+    connect(new QShortcut(QKeySequence(Qt::Key_Right), this), SIGNAL(activated()), this, SLOT(nextImage()));
     QStringList Largs = QApplication::arguments();
     qDebug() << Largs;
-    if (Largs.length()>1) {
+
+    if (Largs.length() > 1) {
         QUrl url(Largs.at(1));
         open(url.toLocalFile());
     }
@@ -43,11 +42,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_action_open_triggered()
 {
-    if (path=="") {
-        path = QFileDialog::getOpenFileName(this,"打开图片", ".", "图片文件(*.jpg *.jpeg *.png *.bmp)");
+    if (path == "") {
+        path = QFileDialog::getOpenFileName(this, "打开图片", ".", "图片文件(*.jpg *.jpeg *.png *.bmp)");
     } else {
-        path = QFileDialog::getOpenFileName(this,"打开图片", path, "图片文件(*.jpg *.jpeg *.png *.bmp)");
+        path = QFileDialog::getOpenFileName(this, "打开图片", path, "图片文件(*.jpg *.jpeg *.png *.bmp)");
     }
+
     if (path.length() != 0) {
         open(path);
     }
@@ -70,13 +70,14 @@ void MainWindow::on_action_about_triggered()
 void MainWindow::dragEnterEvent(QDragEnterEvent *e)
 {
     //if(e->mimeData()->hasFormat("text/uri-list")) //只能打开文本文件
-        e->acceptProposedAction(); //可以在这个窗口部件上拖放对象
+    e->acceptProposedAction(); //可以在这个窗口部件上拖放对象
 }
 
 void MainWindow::dropEvent(QDropEvent *e)
 {
     QList<QUrl> urls = e->mimeData()->urls();
-    if(urls.isEmpty())
+
+    if (urls.isEmpty())
         return ;
 
     QString fileName = urls.first().toLocalFile();
@@ -86,7 +87,7 @@ void MainWindow::dropEvent(QDropEvent *e)
 //    }
 //    qDebug() << urls.size();
 
-    if(fileName.isEmpty())
+    if (fileName.isEmpty())
         return;
 
     open(fileName);
@@ -135,8 +136,10 @@ void MainWindow::genList(QString spath)
     dir.setSorting(QDir::Name);
     fileInfoList.clear();
     fileInfoList = dir.entryInfoList();
+
     for (int i = 0; i < fileInfoList.size(); i++) {
         QFileInfo fileInfo = fileInfoList.at(i);
+
         //qDebug() << fileInfo.absoluteFilePath() << path;
         if (fileInfo.absoluteFilePath() == path) {
             index = i;
@@ -149,6 +152,7 @@ void MainWindow::genList(QString spath)
 void MainWindow::lastImage()
 {
     int id = index - 1;
+
     if (id > -1) {
         loadImage(fileInfoList.at(id).absoluteFilePath());
         index = id;
@@ -158,6 +162,7 @@ void MainWindow::lastImage()
 void MainWindow::nextImage()
 {
     int id = index + 1;
+
     if (id < fileInfoList.size()) {
         loadImage(fileInfoList.at(id).absoluteFilePath());
         index = id;
@@ -189,12 +194,15 @@ void MainWindow::on_actionRotateRight_triggered()
 void MainWindow::loadImage(QString spath)
 {
     QPixmap pixmap(spath);
-    ui->statusBar->showMessage("分辨率：" + QString::number(pixmap.width()) + " X " +QString::number(pixmap.height()));
-    if(zoomType == ZoomFit){
+    ui->statusBar->showMessage("分辨率：" + QString::number(pixmap.width()) + " X " + QString::number(pixmap.height()));
+
+    if (zoomType == ZoomFit) {
         pixmap = pixmap.scaled(ui->centralWidget->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
     }
-    if(isFullScreen())
+
+    if (isFullScreen())
         qDebug() << "zoom" << pixmap.size();
+
     ui->label->setPixmap(pixmap);
     setWindowTitle(QFileInfo(spath).fileName());
 }
@@ -202,7 +210,8 @@ void MainWindow::loadImage(QString spath)
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event);
-    if(index != -1)
+
+    if (index != -1)
         loadImage(fileInfoList.at(index).absoluteFilePath());
 }
 
@@ -218,15 +227,18 @@ void MainWindow::on_actionTrash_triggered()
 {
     QString filepath = fileInfoList.at(index).absoluteFilePath();
     QString newName = QDir::homePath() + "/.local/share/Trash/files/" + QFileInfo(filepath).fileName();
+
     if (QFile::copy(filepath, newName)) {
         QString pathinfo = QDir::homePath() + "/.local/share/Trash/info/" + QFileInfo(filepath).fileName() + ".trashinfo";
         QFile file(pathinfo);
+
         if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
             QTextStream stream(&file);
             QDateTime time = QDateTime::currentDateTime();
             stream << "[Trash Info]\nPath=" + filepath + "\nDeletionDate=" + time.toString("yyyy-MM-ddThh:mm:ss");
             file.close();
         }
+
         if (QFile::remove(filepath)) {
             genList(QFileInfo(filepath).absolutePath());
             loadImage(fileInfoList.at(index).absoluteFilePath());
@@ -240,7 +252,7 @@ void MainWindow::on_actionTrash_triggered()
 
 void MainWindow::on_actionSetWallpaper_triggered()
 {
-    if(index != -1){
+    if (index != -1) {
         QString cmd = "gsettings set org.gnome.desktop.background picture-uri file://" + fileInfoList.at(index).absoluteFilePath();
         qDebug() << cmd;
         QProcess *process = new QProcess;

@@ -1,0 +1,371 @@
+
+QWidget#demo {
+    background-color: blue;
+}
+
+QWidget#TipWidget {
+    qproperty-background: rgba(0,0,0,70%);
+    qproperty-borderColor: rgba(0,0,0,10%);
+    qproperty-radius: 4.0px;
+}
+
+QWidget#EscTip {
+    qproperty-background: rgba(0,0,0,70%);
+    qproperty-borderColor: rgba(0,0,0,10%);
+    qproperty-radius: 4.0px;
+}
+
+QLabel#WhiteTipText {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+
+/* background-image 设置为 svg 后， svg 不会缩放，设置按钮边框有用，奇怪的是 background-color 同样起作用 */
+QPushButton#button1 {
+    border-radius: 4px;     
+    border: 1px solid #868686;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    background-image: url(":/assets/images/ie_0.svg");
+}
+
+QPushButton#button1:hover {
+    border-radius: 4px;     
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    background-color: #5c67b8;    
+    border: 1px solid #5c67b8;
+    background-image: url(":/assets/images/ie_1.svg");
+}
+
+
+QPushButton#button1:pressed {
+    border-radius: 4px;     
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    background-color: #424c94;    
+    border: 1px solid #424c94;
+    background-image: url(":/assets/images/ie_2.svg");
+}
+
+
+/* border-image 设置为 svg 后， svg 会自动缩放大小到按钮大小，但是设置按钮边框无用 */
+QPushButton#button2 {
+    border-radius: 4px;     
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    border: 1px solid #868686;
+    border-image: url(":/assets/images/ie_0.svg");
+}
+
+QPushButton#button2:hover {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    background-color: #5c67b8;    
+    border: 1px solid #5c67b8;
+    border-image: url(":/assets/images/ie_1.svg");
+}
+
+QPushButton#button2:pressed {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    background-color: #424c94;    
+    border: 1px solid #424c94;
+    border-image: url(":/assets/images/ie_2.svg");
+}
+
+
+
+/* image 设置为 svg 后， svg 会自动缩放大小到按钮大小，设置按钮边框有用 */
+QPushButton#button3 {    
+    
+    border-radius: 4px;     
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-width: 100px;
+    border: 1px solid #868686;
+    image: url(:/assets/images/ie_0.svg);
+}
+
+QPushButton#button3:hover {    
+    border-radius: 4px;
+    background-color: #5c67b8;    
+    border: 1px solid #5c67b8;
+    image: url(:/assets/images/ie_1.svg);
+}
+
+QPushButton#button3:pressed {    
+    border-radius: 4px;
+    background-color: #424c94;    
+    border: 1px solid #424c94;
+    image: url(:/assets/images/ie_2.svg);
+}
+
+
+
+
+/* 搜索答案 */
+QPushButton#button4 {    
+    font-family: arial;
+    font-size: 14px;
+    font-weight: 400;
+    
+
+    width: 100px;
+    height: 34px;    
+    
+    color: #fff;
+    border: 1px solid #2e82ff;
+    background: #38f;
+}
+
+QPushButton#button4:hover {    
+    border-radius: 4px;
+    background-color: #5c67b8;    
+    border: 1px solid #5c67b8;
+    image: url(:/assets/images/ie_1.svg);
+}
+
+QPushButton#button4:pressed {    
+    border-radius: 4px;
+    background-color: #424c94;    
+    border: 1px solid #424c94;
+    image: url(:/assets/images/ie_2.svg);
+}
+
+
+
+/* 我要提问 */
+QPushButton#button5 {    
+    font-family: arial;
+    font-size: 14px;
+    font-weight: 400;
+    
+
+    width: 100px;
+    height: 34px;    
+    
+    color: #38f;
+    border: 1px solid #2e82ff;
+    background: #fff;
+}
+
+QPushButton#button5:hover {    
+   
+}
+
+QPushButton#button5:pressed {    
+    
+}
+
+
+QPushButton#button6 {       
+    width: 300px;
+    height: 300px;
+    border: 2px solid pink;    
+    background-image: url(:/assets/images/firefox_logo.png);
+}
+
+QPushButton#button6:hover {    
+   
+}
+
+QPushButton#button6:pressed {    
+    
+}
+
+
+
+QPushButton#button7 {       
+    width: 300px;
+    height: 300px;
+    border: 2px solid pink;    
+    image: url(:/assets/images/firefox_logo.png);
+}
+
+QPushButton#button7:hover {    
+   
+}
+
+QPushButton#button7:pressed {    
+    
+}
+
+
+QPushButton#button8 {       
+    width: 300px;
+    height: 300px;
+    border: 2px solid pink;    
+    border-image: url(:/assets/images/firefox_logo.png);
+}
+
+QPushButton#button8:hover {    
+   
+}
+
+QPushButton#button8:pressed {    
+    
+}
+
+
+
+QPushButton#button9 {   
+    border: 30px solid transparent;    
+    padding: 20px;
+    border-image: url(:/assets/images/border.png) 30;
+}
+
+QPushButton#button9:hover {    
+   
+}
+
+QPushButton#button9:pressed {    
+    
+}
+
+
+QWidget#Widget02 {
+    background-color: green;
+}
+
+
+/* 四联图片的剪裁 */
+
+/* 最小化按钮 */
+QPushButton#buttonMin{
+    min-width: 27px;
+    min-height: 27px;
+    max-width: 27px;
+    max-height: 27px;
+    border:0px;
+    border-radius:1;
+
+    /* 右侧 减掉 81px， 左侧剪去 0， 第一张图片 */
+    border-image:url(:/assets/images/TitleQss/min.png) 0 81 0 0 ;
+
+}
+
+QPushButton#buttonMin:hover
+{
+    /* 右侧减去 54， 左侧剪去 27， 第二张图片 */
+    border-image:url(:/assets/images/TitleQss/min.png) 0 54 0 27 ;
+}
+
+QPushButton#buttonMin:pressed
+{
+    /* 右侧减去 27, 左侧剪去 54， 第三张图片 */
+    border-image:url(:/assets/images/TitleQss/min.png) 0 27 0 54 ;
+}
+
+
+
+/* 最大化按钮 */
+QPushButton#buttonMax{
+    min-width: 27px;
+    min-height: 27px;
+    max-width: 27px;
+    max-height: 27px;
+    border-image:url(:/assets/images/TitleQss/max.png) 0 81 0 0 ;
+}
+
+QPushButton#buttonMax:hover
+{
+    border-image:url(:/assets/images/TitleQss/max.png) 0 54 0 27 ;
+}
+
+QPushButton#buttonMax:pressed
+{
+    border-image:url(:/assets/images/TitleQss/max.png) 0 27 0 54 ;
+}
+
+
+
+/* 还原按钮 */
+QPushButton#buttonRestore{
+    min-width: 27px;
+    min-height: 27px;
+    max-width: 27px;
+    max-height: 27px;
+    border-image:url(:/assets/images/TitleQss/restore.png) 0 81 0 0 ;
+   
+}
+
+QPushButton#buttonRestore:hover
+{
+    border-image:url(:/assets/images/TitleQss/restore.png) 0 54 0 27 ;
+    
+}
+
+QPushButton#buttonRestore:pressed
+{
+    border-image:url(:/assets/images/TitleQss/restore.png) 0 27 0 54 ;
+    
+}
+
+
+/* 关闭按钮 */
+QPushButton#buttonClose{
+    min-width: 27px;
+    min-height: 27px;
+    max-width: 27px;
+    max-height: 27px;
+    border-image:url(:/assets/images/TitleQss/close.png) 0 81 0 0 ;
+    border-top-right-radius:3 ;
+    border-top-left-radius:1px;
+    border-bottom-left-radius:1px;
+    border-bottom-right-radius:1px;
+}
+
+QPushButton#buttonClose:hover
+{
+    border-image:url(:/assets/images/TitleQss/close.png) 0 54 0 27 ;
+    border-top-right-radius:3 ;
+}
+
+QPushButton#buttonClose:pressed
+{
+    border-image:url(:/assets/images/TitleQss/close.png) 0 27 0 54 ;
+    border-top-right-radius:3 ;
+}
+
+
+
+QComboBox[editable="false"],
+QComboBox[editable="true"]::drop-down {
+    border-image: url(:/qss/pagefold/pushbutton.png) 5;
+    border-width: 5;
+}
+
+
+QComboBox[editable="false"]:hover,
+QComboBox[editable="true"]::drop-down:hover, QMenuBar::item:hover {
+    border-image: url(:/qss/pagefold/pushbutton_hover.png) 5;
+    border-width: 5;
+}
+
+
+QComboBox[editable="false"]:on,
+QComboBox[editable="true"]::drop-down:on, QMenuBar::item:on {
+    border-image: url(:/qss/pagefold/pushbutton_pressed.png) 5;
+    border-width: 5;
+}
+
+
+QWidget#widget04 {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                     stop: 0 #F7B552, stop: 1 #FF5E07);
+}

@@ -2,6 +2,8 @@ md build 1>nul 2>nul
 
 cd build
 
+
+
 set QTDIR571=C:\qt-571-static-vs2015-xp
 @set PATH=D:\nginxstack\cmake\bin;%PATH%
 
@@ -16,6 +18,7 @@ SET LIB=C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib;%LIB%
 SET CL=/Zc:threadSafeInit- /D_USING_V110_SDK71_;%CL%
 
 cmake -G "Visual Studio 14 2015" -T v140_xp ..
+
 
 
 cd /d "%~dp0"

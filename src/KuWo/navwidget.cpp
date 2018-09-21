@@ -4,15 +4,15 @@
 #include <QDebug>
 
 NavWidget::NavWidget(QWidget *parent) : QWidget(parent)
-{    
+{
     setStyleSheet("QListWidget { border:none; } "
                   "QListWidget::item { color:#cccccc; padding:3px;} "
                   "QListWidget::item:selected { background-color:#333333; }");
     setFixedWidth(200);
-    setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Expanding);
-    QVBoxLayout *vbox = new QVBoxLayout;    
+    setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+    QVBoxLayout *vbox = new QVBoxLayout;
     listWidget = new QListWidget;
-    listWidget->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Expanding);
+    listWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
     QListWidgetItem *LWI;
     LWI = new QListWidgetItem(QIcon(":/music1.svg"), "推荐");
     listWidget->insertItem(0, LWI);
@@ -43,11 +43,10 @@ NavWidget::NavWidget(QWidget *parent) : QWidget(parent)
     LWI = new QListWidgetItem(QIcon(":/menu.svg"), "默认列表");
     listWidget->insertItem(12, LWI);
     vbox->addWidget(listWidget);
-
     QHBoxLayout *hbox = new QHBoxLayout;
     pushButton_albumPic = new QPushButton;
-    pushButton_albumPic->setFixedSize(74,74);    
-    pushButton_albumPic->setIconSize(QSize(70,70));
+    pushButton_albumPic->setFixedSize(74, 74);
+    pushButton_albumPic->setIconSize(QSize(70, 70));
     pushButton_albumPic->setFocusPolicy(Qt::NoFocus);
     pushButton_albumPic->setFlat(true);
     pushButton_albumPic->setCursor(Qt::PointingHandCursor);
@@ -56,8 +55,6 @@ NavWidget::NavWidget(QWidget *parent) : QWidget(parent)
     label_songname->setStyleSheet("font-size:13px;");
     hbox->addWidget(label_songname);
     hbox->addStretch();
-
     vbox->addLayout(hbox);
-
     setLayout(vbox);
 }

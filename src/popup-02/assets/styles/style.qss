@@ -1,0 +1,21 @@
+
+QWidget#demo {
+    background-color: blue;
+}
+
+QWidget#TipWidget {
+    qproperty-background: rgba(0,0,0,70%);
+    qproperty-borderColor: rgba(0,0,0,10%);
+    qproperty-radius: 4.0px;
+}
+
+QWidget#EscTip {
+    qproperty-background: rgba(0,0,0,70%);
+    qproperty-borderColor: rgba(0,0,0,10%);
+    qproperty-radius: 4.0px;
+}
+
+QLabel#WhiteTipText {
+    font-size: 12px;
+    color: #ffffff;
+}

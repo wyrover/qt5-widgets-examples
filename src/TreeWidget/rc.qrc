@@ -1,0 +1,37 @@
+<RCC>
+  <qresource>
+    <file>images/chunse.png</file>
+    <file>images/smallWindow/back.png</file>
+    <file>images/smallWindow/down.png</file>
+    <file>images/smallWindow/front.png</file>
+    <file>images/smallWindow/left.png</file>
+    <file>images/smallWindow/right.png</file>
+    <file>images/smallWindow/up.png</file>
+    <file>images/item/info.png</file>
+    <file>images/item/info_hover.png</file>
+    <file>images/item/win.png</file>
+    <file>images/item/win_hover.png</file>
+    <file>images/title/button3_hover.png</file>
+    <file>images/payloadIcon/unvisible.png</file>
+    <file>images/payloadIcon/unvisible_hover.png</file>
+    <file>images/payloadIcon/visible_hover.png</file>
+    <file>images/payloadIcon/moon.png</file>
+    <file>images/payloadIcon/sun.png</file>
+    <file>images/payloadIcon/earth.png</file>
+    <file>images/payloadIcon/satellite.png</file>
+    <file>images/payloadIcon/antenna.png</file>
+    <file>images/payloadIcon/engine.png</file>
+    <file>images/payloadIcon/open.png</file>
+    <file>images/payloadIcon/payload.png</file>
+    <file>images/payloadIcon/sensor.png</file>
+    <file>images/payloadIcon/solar_panel.png</file>
+    <file>images/payloadIcon/visible.png</file>
+    <file>images/title/custom_close.png</file>
+    <file>images/plugin_button.png</file>
+    <file>images/title/custom_hide.png</file>
+    <file>images/plugin_button_checked.png</file>
+    <file>images/plugin_button_hover.png</file>
+    <file>images/title/button2.png</file>
+    <file>images/title/button3.png</file>
+  </qresource>
+</RCC>

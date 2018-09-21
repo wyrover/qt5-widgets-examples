@@ -1,0 +1,22 @@
+<RCC>    
+    <qresource prefix="/">        
+        <file>assets/images/log/1.svg</file>
+        <file>assets/images/log/2.svg</file>      
+        <file>assets/images/log/3.svg</file>  
+        <file>assets/images/log/4.svg</file>  
+        <file>assets/images/log/5.svg</file>  
+        <file>assets/images/log/6.svg</file>  
+        <file>assets/images/log/7.svg</file>
+        <file>assets/images/log_selected/1.svg</file>
+        <file>assets/images/log_selected/2.svg</file>      
+        <file>assets/images/log_selected/3.svg</file>  
+        <file>assets/images/log_selected/4.svg</file>  
+        <file>assets/images/log_selected/5.svg</file>  
+        <file>assets/images/log_selected/6.svg</file>  
+        <file>assets/images/log_selected/7.svg</file>  
+    </qresource>
+</RCC>
+
+
+
+

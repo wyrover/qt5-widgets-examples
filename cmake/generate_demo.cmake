@@ -10,7 +10,7 @@ function(generate_demo arg)
     # Turn on automatic invocation of the MOC
     set(CMAKE_AUTOMOC ON)
     set(CMAKE_AUTOUIC ON)
-    set(CMAKE_AUTORCC ON)
+    #set(CMAKE_AUTORCC ON)
 
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
@@ -36,15 +36,15 @@ function(generate_demo arg)
     
 
     # Find the QtWidgets library
-    find_package(Qt5 COMPONENTS Core Gui Widgets Svg Multimedia Network Concurrent Sql PrintSupport Xml REQUIRED)
-
+    find_package(Qt5 COMPONENTS Core Gui Widgets Svg Multimedia MultimediaWidgets OpenGL OpenGLExtensions Network Concurrent Sql PrintSupport Xml Charts Qml Quick WebSockets REQUIRED)
+    
 
 
     # Generate rules for building source files from the resources
     file(GLOB_RECURSE QRCS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/${ARGV0}/*.qrc)
     
-    #qt5_add_resources(QRCS ${QRCS_FILES})
-
+    qt5_add_resources(QRCS ${QRCS_FILES})
+    
 
     # Generate code from ui files
     #set(UI_HEADERS mainwindow.ui)
@@ -66,11 +66,18 @@ function(generate_demo arg)
         Qt5::Gui 
         Qt5::Widgets 
         Qt5::Multimedia
+        Qt5::MultimediaWidgets
+        Qt5::OpenGL
+        Qt5::OpenGLExtensions
         Qt5::Network
         Qt5::Concurrent
         Qt5::Svg
         Qt5::Xml
         Qt5::Sql        
+        Qt5::PrintSupport        
+        Qt5::Charts
+        Qt5::Qml
+        Qt5::Quick             
         ${Qt5Platform_LIBRARIES} 
         ${Qt5QWindows_LIBRARIES} 
         ${Qt5PNG_LIBRARIES} 
@@ -84,6 +91,8 @@ function(generate_demo arg)
         Imm32 
         Winmm
         Iphlpapi
+        opengl32
+        glu32        
         CuteLogger
     )
 

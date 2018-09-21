@@ -1,0 +1,12 @@
+<RCC>    
+    <qresource prefix="/">        
+        <file>assets/images/tip.svg</file>        
+    </qresource>
+    <qresource prefix="/qss">
+      <file>assets/styles/style.qss</file>
+    </qresource>
+</RCC>
+
+
+
+

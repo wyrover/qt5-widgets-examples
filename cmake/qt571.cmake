@@ -142,7 +142,8 @@ if(WIN32 AND MSVC)
     )
     FIND_LIBRARY(Qt5PNG_LIBRARIES_DEBUG qtpngd
         HINTS "${QT_LIB_DIR}"
-    )    
+    )   
+
 
     # qsqlite
     FIND_LIBRARY(Qt5SQLITE_LIBRARIES_RELEASE qsqlite
