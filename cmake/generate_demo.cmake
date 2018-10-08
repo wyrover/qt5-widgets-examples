@@ -49,6 +49,9 @@ function(generate_demo arg)
     # Generate code from ui files
     #set(UI_HEADERS mainwindow.ui)
 
+
+    file(GLOB_RECURSE SOURCE_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/${ARGV0}/*.h)
+
     file(GLOB_RECURSE UI_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/${ARGV0}/*.ui)
 
     file(GLOB_RECURSE SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/${ARGV0}/*.cpp)
@@ -56,7 +59,7 @@ function(generate_demo arg)
     #set(SOURCE_FILES main.cpp widget.cpp)
 
     # Tell CMake to create the HBoxLayout-02 executable
-    add_executable(${ARGV0} ${SOURCE_FILES} ${UI_HEADERS} ${QRCS_FILES})
+    add_executable(${ARGV0} ${SOURCE_FILES} ${UI_HEADERS} ${SOURCE_HEADERS} ${QRCS_FILES})
 
 
     target_include_directories(${ARGV0} BEFORE PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/${ARGV0})
